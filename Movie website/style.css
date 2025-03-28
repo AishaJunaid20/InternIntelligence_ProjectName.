@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 🔥 Hero Section with Background Image */
+.hero {
+    position: relative;
+    background: url('images.png') no-repeat center center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    color: white;
+    overflow: hidden;
+}
+
+/* Dark Overlay for Better Text Visibility */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Ensure text stays above overlay */
+.hero h1, .hero p {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* 🎬 Movie Grid Section */
+.movies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 movies per row */
+    gap: 25px;
+    padding: 40px 20px;
+    justify-content: center;
+}
+
+/* 🎥 Movie Card Styling */
+.movie-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Smooth Hover Effect */
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(255, 140, 0, 0.8);
+}
+
+/* Movie Images */
+.movie-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Zoom Effect on Hover */
+.movie-card:hover img {
+    transform: scale(1.1);
+}
+
+.movie-card h3 {
+    margin-top: 15px;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.movie-card p {
+    font-size: 1.1rem;
+    margin-top: 8px;
+    color: #bbb;
+    font-weight: 300;
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 900px) {
+    .movies {
+        grid-template-columns: repeat(2, 1fr); /* 2 movies per row on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .movies {
+        grid-template-columns: repeat(1, 1fr); /* 1 movie per row on mobile */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
